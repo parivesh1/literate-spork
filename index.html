@@ -8,20 +8,26 @@
   <meta name="keywords" content="dentist in Bhopal, dental clinic Bhopal, best dentist Arera Colony, root canal treatment Bhopal, teeth whitening Bhopal, crowns and bridges Bhopal, orthodontist Bhopal, painless dentist Bhopal, Dr Sanjeev Bajpai BDS, Care N Cure Dental Clinic, LIG Colony dentist, 11 stop Bhopal dentist, child dentist Bhopal" />
   <meta name="author" content="Care 'N' Cure Dental Clinic, Bhopal" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://carencuredental.in/" />
+  <link rel="canonical" href="https://care-n-cure-dentalclinic.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Care 'N' Cure Dental Clinic | Best Dentist in Bhopal" />
   <meta property="og:description" content="Trusted dental care in Bhopal's Arera Colony. Dr. Sanjeev Bajpai, BDS – 34+ years of experience. Painless RCT, whitening, braces & more. Book on WhatsApp." />
-  <meta property="og:url" content="https://carencuredental.in/" />
+  <meta property="og:url" content="https://care-n-cure-dentalclinic.vercel.app/" />
+  <meta property="og:image" content="https://care-n-cure-dentalclinic.vercel.app/og-image.jpg" />
   <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Care 'N' Cure Dental Clinic | Trusted Dentist in Bhopal" />
+  <meta name="twitter:description" content="Book appointments with Dr. Sanjeev Bajpai, BDS (34+ years). Root canal, crowns, whitening, braces, and family dental care in Arera Colony, Bhopal." />
+  <meta name="twitter:image" content="https://care-n-cure-dentalclinic.vercel.app/og-image.jpg" />
+  <meta name="theme-color" content="#0f1f2e" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "Care 'N' Cure Dental Clinic",
     "description": "Trusted dental clinic in Bhopal offering general dentistry, root canal treatment, teeth whitening, crowns, orthodontics and more. Led by Dr. Sanjeev Bajpai, BDS, with over 34 years of experience.",
-    "url": "https://carencuredental.in",
-    "telephone": "+91XXXXXXXXXX",
+    "url": "https://care-n-cure-dentalclinic.vercel.app/",
+    "telephone": "+919425013088",
     "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
@@ -37,7 +43,39 @@
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "17:00", "closes": "20:30" }
     ],
     "medicalSpecialty": "Dentistry",
-    "hasMap": "https://maps.google.com/?q=Care+N+Cure+Dental+Clinic+11+Stop+LIG+Colony+Arera+Colony+Bhopal"
+    "hasMap": "https://maps.app.goo.gl/npnr6BsFHvTUhgCbA"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which dental treatments are available at Care 'N' Cure Dental Clinic in Bhopal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer general dentistry, root canal treatment, scaling and polishing, fillings, crowns and bridges, dentures, teeth whitening, extractions, pediatric dentistry, and orthodontic braces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the clinic located in Bhopal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Care 'N' Cure Dental Clinic is located at E 7/168, 1st Floor, 11th Stop Main Road, LIG Colony, Arera Colony, Bhopal, Madhya Pradesh 462016."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I book an appointment with Dr. Sanjeev Bajpai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can book quickly on WhatsApp at +91 9425013088. Share your preferred date and time and the clinic team will confirm your slot."
+        }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +127,21 @@
       transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:multiply;
     }
 
+    .skip-link {
+      position:fixed;left:10px;top:-44px;z-index:400;
+      background:var(--teal);color:#fff;text-decoration:none;
+      padding:0.6rem 0.9rem;border-radius:8px;font-size:0.8rem;font-weight:600;
+      transition:top 0.2s;
+    }
+    .skip-link:focus { top:10px; }
+
+    .scroll-progress {
+      position:fixed;top:0;left:0;height:3px;width:0%;z-index:310;
+      background:linear-gradient(90deg,var(--teal),var(--teal-xl));
+      box-shadow:0 0 20px rgba(61,189,163,0.65);
+      transition:width 0.08s linear;
+    }
+
     /* ─── NAV ─── */
     nav {
       position:fixed;top:0;left:0;right:0;z-index:200;
@@ -124,8 +177,77 @@
     }
     .nav-links a:hover { color:#fff; }
     .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-links a.active { color:var(--teal-xl); }
+    .nav-links a.active::after { transform:scaleX(1); }
     nav.scrolled .nav-links a { color:var(--muted); }
     nav.scrolled .nav-links a:hover { color:var(--navy); }
+    nav.scrolled .nav-links a.active { color:var(--teal); }
+
+    .nav-toggle {
+      display:none;
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.28);
+      background:rgba(255,255,255,0.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      font-size:1.2rem;
+      cursor:pointer;
+    }
+    nav.scrolled .nav-toggle {
+      border-color:rgba(15,31,46,0.18);
+      background:rgba(15,31,46,0.04);
+      color:var(--navy);
+    }
+
+    .mobile-nav-panel {
+      position:fixed;
+      top:64px;
+      left:6%;
+      right:6%;
+      z-index:260;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(15,31,46,0.94);
+      backdrop-filter:blur(12px);
+      border-radius:14px;
+      padding:0.7rem;
+      display:none;
+      box-shadow:0 18px 40px rgba(0,0,0,0.25);
+    }
+    .mobile-nav-panel.open { display:block; }
+    .mobile-nav-link {
+      display:block;
+      padding:0.72rem 0.78rem;
+      border-radius:10px;
+      color:rgba(255,255,255,0.9);
+      text-decoration:none;
+      font-size:0.84rem;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+      transition:background 0.2s,color 0.2s;
+    }
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background:rgba(61,189,163,0.16);
+      color:#fff;
+    }
+    .mobile-nav-book {
+      margin-top:0.45rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      padding:0.72rem;
+      font-size:0.82rem;
+      font-weight:600;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
 
     .nav-cta {
       background:var(--teal);color:#fff;
@@ -152,6 +274,8 @@
     }
     .orb {
       position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;
+      transition:transform 0.35s ease;
+      will-change:transform;
     }
     .orb-1 { width:420px;height:420px;background:rgba(30,122,104,0.14);top:-100px;right:12%;animation:float 9s ease-in-out infinite; }
     .orb-2 { width:260px;height:260px;background:rgba(184,145,78,0.09);bottom:5%;left:3%;animation:float 11s ease-in-out infinite reverse; }
@@ -220,6 +344,26 @@
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;
     }
     .stat-label { font-size:0.72rem;color:rgba(255,255,255,0.32);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-top:0.3rem; }
+
+    .scroll-cue {
+      margin-top:2.1rem;
+      display:inline-flex;
+      align-items:center;
+      gap:0.55rem;
+      color:rgba(255,255,255,0.62);
+      text-decoration:none;
+      font-size:0.78rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      transition:color 0.2s;
+      animation:float 2.8s ease-in-out infinite;
+    }
+    .scroll-cue:hover { color:#fff; }
+    .scroll-cue-line {
+      width:24px;
+      height:1px;
+      background:rgba(255,255,255,0.55);
+    }
 
     /* ─── HERO RIGHT ─── */
     .hero-right {
@@ -292,6 +436,8 @@
       border-radius:16px;padding:2rem 1.6rem;
       position:relative;overflow:hidden;
       transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.35s,border-color 0.3s;
+      transform-style:preserve-3d;
+      will-change:transform;
     }
     .service-card::before {
       content:'';position:absolute;inset:0;
@@ -457,6 +603,138 @@
     }
     .loc-wa-btn:hover { background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.28); }
 
+    .faq-grid { display:grid;grid-template-columns:1fr 1fr;gap:1.2rem; }
+    .faq-item {
+      background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.3rem;
+      transition:border-color 0.25s,box-shadow 0.25s,transform 0.25s;
+    }
+    .faq-item:hover { border-color:rgba(30,122,104,0.25);box-shadow:0 10px 28px rgba(15,31,46,0.08);transform:translateY(-3px); }
+    .faq-q { font-weight:600;color:var(--navy);font-size:0.92rem;margin-bottom:0.4rem; }
+    .faq-a { color:var(--muted);font-size:0.84rem;line-height:1.7; }
+
+    .testimonials-section {
+      background:linear-gradient(180deg,#f8f4ec 0%,#fdfaf5 100%);
+      overflow:hidden;
+      position:relative;
+    }
+    .testimonials-section::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse 55% 45% at 12% 20%, rgba(30,122,104,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 35% at 88% 78%, rgba(184,145,78,0.12) 0%, transparent 60%);
+      pointer-events:none;
+    }
+    .reviews-marquee {
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+    }
+    .reviews-track {
+      display:flex;
+      gap:1rem;
+      width:max-content;
+      animation:reviewsScroll 36s linear infinite;
+      will-change:transform;
+    }
+    .reviews-marquee:hover .reviews-track {
+      animation-play-state:paused;
+    }
+    .reviews-track.reverse { animation-direction:reverse; animation-duration:42s; }
+    .review-card {
+      width:min(340px, 80vw);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:1.1rem 1.1rem 1rem;
+      box-shadow:0 10px 30px rgba(15,31,46,0.08);
+      transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .review-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 16px 36px rgba(15,31,46,0.12);
+      border-color:rgba(30,122,104,0.32);
+    }
+    .review-stars {
+      letter-spacing:0.12em;
+      color:#d4a85e;
+      font-size:0.92rem;
+      margin-bottom:0.6rem;
+      user-select:none;
+    }
+    .review-text {
+      color:var(--navy);
+      font-size:0.84rem;
+      line-height:1.68;
+      margin-bottom:0.9rem;
+      min-height:4.3em;
+    }
+    .review-author {
+      color:var(--muted);
+      font-size:0.76rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-weight:600;
+    }
+    .reviews-note {
+      position:relative;
+      z-index:1;
+      margin-top:1.25rem;
+      font-size:0.78rem;
+      color:var(--muted);
+    }
+    @keyframes reviewsScroll {
+      from { transform:translateX(0); }
+      to { transform:translateX(-50%); }
+    }
+
+    .floating-wa {
+      position:fixed;right:1.1rem;bottom:1.1rem;z-index:220;
+      width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 14px 30px rgba(37,211,102,0.35);
+      transition:transform 0.2s,box-shadow 0.2s,background 0.2s;
+      animation:pulse-ring 2.2s infinite;
+    }
+    .floating-wa:hover { background:#1ebe5d;transform:translateY(-2px) scale(1.03);box-shadow:0 16px 34px rgba(37,211,102,0.42); }
+    .floating-wa svg { width:27px;height:27px;fill:#fff; }
+
+    .back-to-top {
+      position:fixed;right:1.2rem;bottom:5.8rem;z-index:225;
+      width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(30,122,104,0.25);
+      background:rgba(253,250,245,0.92);color:var(--teal);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.15rem;cursor:pointer;
+      box-shadow:0 10px 24px rgba(15,31,46,0.14);
+      opacity:0;transform:translateY(10px) scale(0.9);
+      pointer-events:none;
+      transition:opacity 0.25s ease,transform 0.25s ease,background 0.2s ease,color 0.2s ease;
+    }
+    .back-to-top.visible {
+      opacity:1;transform:translateY(0) scale(1);pointer-events:auto;
+    }
+    .back-to-top:hover {
+      background:var(--teal);color:#fff;
+    }
+
+    .mobile-booking-bar {
+      display:none;
+      position:fixed;left:0;right:0;bottom:0;z-index:215;
+      background:rgba(15,31,46,0.96);backdrop-filter:blur(10px);
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding:0.55rem 0.7rem;
+    }
+    .mobile-booking-bar a {
+      display:flex;align-items:center;justify-content:center;gap:0.5rem;
+      background:#25D366;color:#fff;text-decoration:none;
+      border-radius:10px;padding:0.72rem 0.9rem;font-size:0.84rem;font-weight:600;
+    }
+    .mobile-booking-bar svg { width:17px;height:17px;fill:#fff; }
+
     /* ─── FOOTER ─── */
     footer {
       background:var(--navy);color:rgba(255,255,255,0.32);
@@ -498,30 +776,68 @@
       .services-grid{grid-template-columns:1fr 1fr;}
       .why-grid{grid-template-columns:1fr 1fr;}
       .nav-links{display:none;}
+      .nav-cta{display:none;}
+      .nav-toggle{display:flex;}
       .section{padding:4rem 6%;}
+      .faq-grid{grid-template-columns:1fr;}
+      .reviews-track { animation-duration:24s; }
+      .cursor-dot{display:none;}
+      .floating-wa{display:none;}
+      .back-to-top{display:none;}
+      .mobile-booking-bar{display:block;}
+      body{padding-bottom:70px;}
     }
     @media(max-width:480px){
       .services-grid,.why-grid{grid-template-columns:1fr;}
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reviews-track { animation:none !important; }
     }
   </style>
 </head>
 <body>
 
+<a href="#services" class="skip-link">Skip to main content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <div class="cursor-dot" id="cursor"></div>
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#" class="nav-logo">Care <span class="amp">'N'</span> Cure</a>
+  <a href="#home" class="nav-logo">Care <span class="amp">'N'</span> Cure</a>
   <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#why-choose-us">Why Choose Us</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#location">Find Us</a></li>
+    <li><a href="#location">How to Find Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQs</a></li>
   </ul>
-  <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="nav-cta" target="_blank" rel="noopener">Book Now</a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNavPanel" aria-label="Open navigation">☰</button>
+  <a href="https://wa.me/919425013088?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="nav-cta" target="_blank" rel="noopener">Book Now</a>
 </nav>
 
+<div class="mobile-nav-panel" id="mobileNavPanel" aria-label="Mobile navigation">
+  <a class="mobile-nav-link" href="#home">Home</a>
+  <a class="mobile-nav-link" href="#services">Services</a>
+  <a class="mobile-nav-link" href="#why-choose-us">Why Choose Us</a>
+  <a class="mobile-nav-link" href="#about">About</a>
+  <a class="mobile-nav-link" href="#location">How to Find Us</a>
+  <a class="mobile-nav-link" href="#testimonials">Reviews</a>
+  <a class="mobile-nav-link" href="#faq">FAQs</a>
+  <a class="mobile-nav-book" href="https://wa.me/919425013088?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20Care%20N%20Cure%20Dental%20Clinic." target="_blank" rel="noopener">Book Appointment</a>
+</div>
+
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="home">
   <div class="hero-bg">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -541,7 +857,7 @@
       <strong>Dr. Sanjeev Bajpai, BDS</strong> — 34+ years of dedicated dental practice serving families across Bhopal's Arera Colony. Painless procedures, honest advice, lasting results.
     </p>
     <div class="hero-btns">
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="btn-wa" target="_blank" rel="noopener">
+      <a href="https://wa.me/919425013088?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="btn-wa" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a7.56 7.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.27a.75.75 0 00.913.913l5.44-1.461A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.692 9.692 0 01-4.927-1.344l-.354-.21-3.668.986.987-3.578-.23-.372A9.698 9.698 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
         Book via WhatsApp
       </a>
@@ -551,10 +867,14 @@
       </a>
     </div>
     <div class="hero-stats">
-      <div><span class="stat-num">34+</span><span class="stat-label">Years Experience</span></div>
-      <div><span class="stat-num">8+</span><span class="stat-label">Services Offered</span></div>
+      <div><span class="stat-num" data-target="34" data-suffix="+">34+</span><span class="stat-label">Years Experience</span></div>
+      <div><span class="stat-num" data-target="8" data-suffix="+">8+</span><span class="stat-label">Services Offered</span></div>
       <div><span class="stat-num">BDS</span><span class="stat-label">Degree Qualified</span></div>
     </div>
+    <a href="#services" class="scroll-cue" aria-label="Scroll to services">
+      <span class="scroll-cue-line"></span>
+      Scroll Down
+    </a>
   </div>
 
   <div class="hero-right">
@@ -579,7 +899,7 @@
         </div>
         <div class="card-text">
           <strong>Hours</strong>
-          <span>Mon–Sat · 10:00 AM – 2:00 PM<br>Mon–Sat · 5:00 PM – 8:30 PM</span>
+          <span>Morning: Mon–Sat · 9:00 AM – 1:30 PM<br>Evening: Mon–Sat · 5:00 PM – 8:30 PM</span>
         </div>
       </div>
       <hr class="card-divider"/>
@@ -589,10 +909,10 @@
         </div>
         <div class="card-text">
           <strong>Contact</strong>
-          <span>+91 XXXX XXX XXX</span>
+          <span>(+91) 9425013088</span>
         </div>
       </div>
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="card-wa-btn" target="_blank" rel="noopener">
+      <a href="https://wa.me/919425013088?text=Hi%20Dr.%20Bajpai%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment." class="card-wa-btn" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a7.56 7.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.27a.75.75 0 00.913.913l5.44-1.461A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.692 9.692 0 01-4.927-1.344l-.354-.21-3.668.986.987-3.578-.23-.372A9.698 9.698 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
         Message on WhatsApp
       </a>
@@ -675,7 +995,7 @@
 </section>
 
 <!-- WHY US -->
-<section class="section why-section">
+<section class="section why-section" id="why-choose-us">
   <p class="section-tag reveal">Why Patients Choose Us</p>
   <h2 class="section-title reveal d1">Decades of trust.<br>Modern, gentle care.</h2>
   <p class="section-sub reveal d2">Thousands of Bhopal families have trusted Care 'N' Cure Dental Clinic for their oral health — here's why they keep coming back.</p>
@@ -766,11 +1086,11 @@
     <div class="map-container reveal-l">
       <iframe
         title="Care N Cure Dental Clinic, Bhopal"
-        src="https://maps.google.com/maps?q=11+number+stop+LIG+Colony+Arera+Colony+Bhopal&output=embed&z=15&hl=en"
+        src="https://www.google.com/maps?q=Care%20N%20Cure%20Dental%20Clinic%2C%20E%207%2F168%2C%2011th%20Stop%20Main%20Road%2C%20LIG%20Colony%2C%20Arera%20Colony%2C%20Bhopal%20462016&output=embed&z=16&hl=en"
         allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
-      <a href="https://maps.google.com/?q=Care+N+Cure+Dental+Clinic+11+Stop+LIG+Colony+Arera+Colony+Bhopal" target="_blank" rel="noopener" class="map-open-link">
+      <a href="https://maps.app.goo.gl/npnr6BsFHvTUhgCbA" target="_blank" rel="noopener" class="map-open-link">
         <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Open in Google Maps
       </a>
@@ -800,14 +1120,124 @@
         </div>
         <div class="loc-item-text">
           <strong>Phone / WhatsApp</strong>
-          <span>+91 XXXX XXX XXX</span>
+          <span>(+91) 9425013088</span>
         </div>
       </div>
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20at%20Care%20N%20Cure." class="loc-wa-btn" target="_blank" rel="noopener">
+      <a href="https://wa.me/919425013088?text=Hi%2C%20I%27d%20like%20to%20book%20a%20dental%20appointment%20at%20Care%20N%20Cure." class="loc-wa-btn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a7.56 7.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.27a.75.75 0 00.913.913l5.44-1.461A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.692 9.692 0 01-4.927-1.344l-.354-.21-3.668.986.987-3.578-.23-.372A9.698 9.698 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
         Book Appointment via WhatsApp
       </a>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+  <p class="section-tag reveal">Patient Reviews</p>
+  <h2 class="section-title reveal d1">What patients say after treatment.</h2>
+  <p class="section-sub reveal d2">Trusted words from real patient experiences at Care 'N' Cure Dental Clinic, Bhopal.</p>
+
+  <div class="reviews-marquee reveal d3" aria-label="Patient testimonial carousel">
+    <div class="reviews-track">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Dr Bajpai has a very long experience in his field. Our whole family is dependent for all dental care which we need;on him. Best of Luck to Dr.Bajpai for his passion towards his profession.</p>
+        <p class="review-author">Harsh Saxena · 6 months ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">A trustworthy clinic for all your dental needs. Dr Sanjeev Bajpai lives up to the name of the clinic, Care & Cure. We’ve been under his care for more than forty years, and we’re absolutely happy and contented with his love and expertise. Wish him all the best.</p>
+        <p class="review-author">tomichan mathew · 5 years ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Care N Cure Dental Clinic is one of Best of Bhopal City. Dr Bajpai is very experience in his field. Last 20 Year's I am taking all type of treatment from him. He is taking full care and if needed then only he suggests best . Before this I was in Mumbai n Baroda but Dr Bajpai is pioneer in his field. His skill is superb then I have taken treatment at Mumbai n Baroda.</p>
+        <p class="review-author">Anil khamesra · 5 years ago</p>
+      </article>
+      <article class="review-card" aria-hidden="true">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I have visited the clinic many times.
+
+They are very professional with their work. They take the patients on appointment only and i have always been taken on time for the procedure.
+
+Dr Bachpai has a very long experience of more than 25 years in this field. He is very good with his work and he has a very neat hand. After care is also good as in case of any problem we can get in touch with him at any time of the day.
+
+Overall will give a very good rating to him and recommend visiting him for dental problem/ procedure.
+
+Vishal Khattar</p>
+        <p class="review-author">Vishal Khattar · 5 years ago</p>
+      </article>
+      <article class="review-card" aria-hidden="true">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Care N Cure I and my family are visiting for the past 20 years and Dr Sanjeev has given excellent treatment continuously. I strongly recommend everyone to visit Care N Cure for Dental needs. One of the Best Dental clinic in Bhopal.</p>
+        <p class="review-author">Rajeev Dubey · 5 years ago</p>
+      </article>
+      <article class="review-card" aria-hidden="true">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Best dentist.of Bhopal.Very caring. I have got my root canal done.I was afraid initially but he made it look so easy and painless..Most importantly very honest and ethical dentist..Rare to find such doctors now a days..Value for money..My entire family now trusts only Dr Bajpai for any dental needs</p>
+        <p class="review-author">Manish Kumar · 7 years ago</p>
+      </article>
+    </div>
+
+    <div class="reviews-track reverse" aria-hidden="true">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Dr Sanjeev has an excellent hand. He is very knowledgeable and quick in his Diagonistic. I have been very satisfied with his work. God bless him always.</p>
+        <p class="review-author">Tarun Sharma · 5 years ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">very knowledgeable , caring and honest dentist..best part is you dont experience pain while getting root canal or tooth extraction done..my whole family takes treatment from only dr bajpai.</p>
+        <p class="review-author">Manish Kumar · Edited 5 years ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Maine care n cure dental clinic me root canal treatment karaya bhut accha experience rha Mera. painless treatment without antibiotics Great job doctor thank you.</p>
+        <p class="review-author">Anjali Sen · 5 years ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">You’re such a wonderful doctor and you always make me feel so safe.To me, you’re a magician, a great dentist, a special gift from God.. Thank you for being the best doctor for me.</p>
+        <p class="review-author">Rohit Sen · 5 years ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Dr Bajpai has a very long experience in his field. Our whole family is dependent for all dental care which we need;on him. Best of Luck to Dr.Bajpai for his passion towards his profession.</p>
+        <p class="review-author">Harsh Saxena · 6 months ago</p>
+      </article>
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Care N Cure I and my family are visiting for the past 20 years and Dr Sanjeev has given excellent treatment continuously. I strongly recommend everyone to visit Care N Cure for Dental needs. One of the Best Dental clinic in Bhopal.</p>
+        <p class="review-author">Rajeev Dubey · 5 years ago</p>
+      </article>
+    </div>
+  </div>
+
+  <p class="reviews-note reveal d4">These testimonials are shown exactly as shared by patients.</p>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="section-tag reveal">Frequently Asked Questions</p>
+  <h2 class="section-title reveal d1">Answers patients ask before booking.</h2>
+  <p class="section-sub reveal d2">Quick, practical information to help you choose the right dental treatment in Bhopal with confidence.</p>
+  <div class="faq-grid">
+    <article class="faq-item reveal d1">
+      <h3 class="faq-q">Do you offer painless root canal treatment in Bhopal?</h3>
+      <p class="faq-a">Yes. Our root canal treatment is done with modern anesthesia and precise instrumentation to keep discomfort minimal while preserving your natural tooth.</p>
+    </article>
+    <article class="faq-item reveal d2">
+      <h3 class="faq-q">Can I book directly on WhatsApp?</h3>
+      <p class="faq-a">Absolutely. Message us on WhatsApp at (+91) 9425013088 with your preferred day and time, and we will confirm your appointment slot.</p>
+    </article>
+    <article class="faq-item reveal d3">
+      <h3 class="faq-q">Do you treat children and senior citizens?</h3>
+      <p class="faq-a">Yes. We provide pediatric and family dentistry, with treatment plans tailored for children, adults, and elderly patients.</p>
+    </article>
+    <article class="faq-item reveal d4">
+      <h3 class="faq-q">Where is the clinic located?</h3>
+      <p class="faq-a">Care 'N' Cure Dental Clinic is at E 7/168, 1st Floor, 11th Stop Main Road, LIG Colony, Arera Colony, Bhopal, near St. Joseph's Co-Ed School.</p>
+    </article>
   </div>
 </section>
 
@@ -816,20 +1246,142 @@
   <span class="footer-logo">Care <span class="amp">'N'</span> Cure</span>
   <p><strong>Care 'N' Cure Dental Clinic</strong> &nbsp;·&nbsp; Dr. Sanjeev Bajpai, BDS &nbsp;·&nbsp; 11th Stop, LIG Colony, Arera Colony, Bhopal</p>
   <p style="margin-top:0.4rem;font-size:0.78rem;">Dental Clinic in Bhopal · Root Canal Treatment · Teeth Whitening · Crowns & Bridges · Orthodontics · Pediatric Dentistry</p>
-  <p style="margin-top:0.8rem">© 2025 Care 'N' Cure Dental Clinic. All rights reserved.</p>
+  <p style="margin-top:0.8rem">© <span id="currentYear"></span> Care 'N' Cure Dental Clinic. All rights reserved.</p>
 </footer>
+
+<a href="https://wa.me/919425013088?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20Care%20N%20Cure%20Dental%20Clinic." class="floating-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a7.56 7.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.27a.75.75 0 00.913.913l5.44-1.461A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.692 9.692 0 01-4.927-1.344l-.354-.21-3.668.986.987-3.578-.23-.372A9.698 9.698 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<div class="mobile-booking-bar" aria-label="Quick booking bar">
+  <a href="https://wa.me/919425013088?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20Care%20N%20Cure%20Dental%20Clinic." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a7.56 7.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.552 4.103 1.518 5.83L.057 23.27a.75.75 0 00.913.913l5.44-1.461A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.692 9.692 0 01-4.927-1.344l-.354-.21-3.668.986.987-3.578-.23-.372A9.698 9.698 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    Book on WhatsApp: (+91) 9425013088
+  </a>
+</div>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
 
 <script>
   // Nav scroll
   const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a, .mobile-nav-link'));
+  const scrollProgress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+  const navToggle = document.getElementById('navToggle');
+  const mobileNavPanel = document.getElementById('mobileNavPanel');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (navToggle && mobileNavPanel) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNavPanel.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    mobileNavPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavPanel.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.textContent = '☰';
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        mobileNavPanel.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.textContent = '☰';
+      }
+    });
+  }
+
+  const updateScrollUI = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 520);
+
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    if (scrollProgress) scrollProgress.style.width = pct + '%';
+
+    const fromTop = window.scrollY + 120;
+    navLinks.forEach(link => {
+      const targetId = link.getAttribute('href');
+      if (!targetId || !targetId.startsWith('#')) return;
+      const section = document.querySelector(targetId);
+      if (!section) return;
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      link.classList.toggle('active', fromTop >= top && fromTop < bottom);
+    });
+  };
+
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+  }
 
   // Custom cursor
   const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
+  if (cursor && !prefersReducedMotion && window.innerWidth > 768) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+  } else if (cursor) {
+    cursor.style.display = 'none';
+  }
+
+  // Orb parallax in hero
+  if (!prefersReducedMotion && window.innerWidth > 900) {
+    const orbs = Array.from(document.querySelectorAll('.orb'));
+    window.addEventListener('mousemove', e => {
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      orbs.forEach((orb, i) => {
+        const strength = (i + 1) * 8;
+        orb.style.transform = `translate(${dx * strength}px, ${dy * strength}px)`;
+      });
+    }, { passive: true });
+  }
+
+  // 3D tilt on service cards
+  if (!prefersReducedMotion) {
+    const serviceCards = Array.from(document.querySelectorAll('.service-card'));
+    serviceCards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const rx = ((y - r.height / 2) / r.height) * -10;
+        const ry = ((x - r.width / 2) / r.width) * 10;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Subtle magnetic effect for nav CTA
+  const navCta = document.querySelector('.nav-cta');
+  if (navCta && !prefersReducedMotion) {
+    navCta.addEventListener('mousemove', e => {
+      const r = navCta.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      navCta.style.transform = `translate(${dx * 5}px, ${dy * 5}px)`;
+    });
+    navCta.addEventListener('mouseleave', () => {
+      navCta.style.transform = '';
+    });
+  }
 
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
@@ -838,6 +1390,40 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
+
+  // Count-up hero stats when visible
+  const countNodes = Array.from(document.querySelectorAll('.stat-num[data-target]'));
+  if (!prefersReducedMotion && countNodes.length > 0) {
+    const animateCount = (el) => {
+      const target = Number(el.getAttribute('data-target') || '0');
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1200;
+      const start = performance.now();
+
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = `${Math.round(target * eased)}${suffix}`;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    countNodes.forEach(el => counterObs.observe(el));
+  }
+
+  // Dynamic copyright year
+  const yearEl = document.getElementById('currentYear');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 </script>
 </body>
 </html>
